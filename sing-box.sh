@@ -578,8 +578,8 @@ check_dependencies() {
   fi
 
   # 检测 Linux 系统的依赖，升级库并重新安装依赖
-  local DEPS_CHECK=("wget" "systemctl" "ss" "bash" "openssl")
-  local DEPS_INSTALL=("wget" "systemctl" "iproute2" "bash" "openssl")
+  local DEPS_CHECK=("wget" "tar" "systemctl" "ss" "bash" "openssl")
+  local DEPS_INSTALL=("wget" "tar" "systemctl" "iproute2" "bash" "openssl")
   for g in "${!DEPS_CHECK[@]}"; do
     [ ! $(type -p ${DEPS_CHECK[g]}) ] && DEPS+=(${DEPS_INSTALL[g]})
   done
